@@ -1,0 +1,4 @@
+#for install mysqlclient
+    sudo dnf install mariadb-connector-c-devel
+    sudo dnf install python3-devel
+    pip install mysqlclient
