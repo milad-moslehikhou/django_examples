@@ -25,3 +25,10 @@ six==1.11.0
 Twisted==18.7.0
 txaio==18.8.1
 zope.interface==4.5.0
+
+# celery
+amqp==2.3.2
+billiard==3.5.0.4
+celery==4.2.1
+kombu==4.2.1
+vine==1.1.4
