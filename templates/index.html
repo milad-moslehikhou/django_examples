@@ -10,19 +10,46 @@
 </head>
 <body>
     <div class="container">
-        <br>
+        <textarea id="text" style="width: 100%"></textarea>
+        <hr />
+        <input type="button" onclick="send()">
     </div>
-    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
-    <script>
-        var socket = new WebSocket('ws://' + window.location.host + '/websocket');
+      <script type="text/javascript">
+         function WebSocketTest()
+         {
+            if ("WebSocket" in window)
+            {
+               alert("WebSocket is supported by your Browser!");
 
-        socket.onopen = function open() {
-            console.log('WebSockets connection created.');
-        };
+               // Let us open a web socket
+               var ws = new WebSocket("ws://192.168.1.202:8080");
 
-        if (socket.readyState == WebSocket.OPEN) {
-            socket.onopen();
-        }
-    </script>
+               ws.onopen = function()
+               {
+                  // Web Socket is connected, send data using send()
+                  ws.send("Hello from client");
+                  alert("Message is sent...");
+               };
+
+               ws.onmessage = function (evt)
+               {
+                  var received_msg = evt.data;
+                  alert("Message is received...");
+               };
+
+               ws.onclose = function()
+               {
+                  // websocket is closed.
+                  alert("Connection is closed...");
+               };
+            }
+
+            else
+            {
+               // The browser doesn't support WebSocket
+               alert("WebSocket NOT supported by your Browser!");
+            }
+         }
+      </script>
 </body>
 </html>

@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'web.apps.WebConfig',
-    'channels',
+    # 'channels',
 ]
 
 MIDDLEWARE = [
@@ -68,15 +68,15 @@ TEMPLATES = [
     },
 ]
 
-CHANNEL_LAYERS = {
-    'default': {
-        'BACKEND': 'asgi_rabbitmq.RabbitmqChannelLayer',
-        'ROUTING': 'django_examples.routing.routes',
-        'CONFIG': {
-            'url': 'amqp://asgi:asgi@localhost:5672/%2F',
-        },
-    },
-}
+# CHANNEL_LAYERS = {
+#     'default': {
+#         'BACKEND': 'asgi_rabbitmq.RabbitmqChannelLayer',
+#         'ROUTING': 'django_examples.routing.routes',
+#         'CONFIG': {
+#             'url': 'amqp://asgi:asgi@localhost:5672/%2F',
+#         },
+#     },
+# }
 
 
 WSGI_APPLICATION = 'django_examples.wsgi.application'
