@@ -32,3 +32,11 @@ billiard==3.5.0.4
 celery==4.2.1
 kombu==4.2.1
 vine==1.1.4
+
+# asgi_rabbitmq
+asgi-rabbitmq==0.5.5
+cached-property==1.4.3
+futures==3.2.0
+gyp==0.1
+mod-wsgi==4.5.20
+msgpack-python==0.5.6
